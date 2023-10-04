@@ -1,0 +1,305 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Your Webpage</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <style>
+            #header {
+                background-color: #1a1a1a; /* Adjusted background color to match the background */
+                padding: 20px;
+                text-align: center;
+                position: fixed;
+                height: 100vh;
+                left: 0;
+                top: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                border-right: 8px solid #808080; /* Border color for the right side */
+                border-top: 8px solid #808080; /* Border color for the top side */
+                border-bottom: 8px solid #808080; /* Border color for the bottom side */
+            }
+    
+            .profile {
+                margin-bottom: 40px; /* Increased margin below the profile section */
+            }
+    
+            .profile .profile-image {
+                width: 180px;
+                height: 180px;
+                object-fit: cover;
+                border: 6px solid #ccc;
+                border-radius: 50%;
+                margin-bottom: 20px; /* Increased margin below the profile image */
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            }
+    
+            .profile h1 {
+                font-size: 32px;
+                margin-top: 10px;
+                margin-bottom: 20px; /* Added margin below the name */
+                color: #6c757d; /* Greyish fancy color for the name */
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fancy font style */
+                text-decoration: none; /* Remove underline */
+            }
+    
+            .profile h1:hover {
+                color: #adb5bd; /* Change color on hover */
+            }
+    
+            .social-links {
+                margin-top: 20px; /* Increased margin */
+                margin-bottom: 40px; /* Increased margin */
+            }
+    
+            .social-links a {
+                font-size: 24px;
+                margin: 20px 15px; /* Adjusted margin */
+                color: #f3f3f3;
+                position: relative;
+                transition: 0.3s;
+            }
+    
+            .social-links a::before {
+                content: '';
+                width: 40px;
+                height: 40px;
+                border: 2px solid #808080; /* Greyish border color */
+                border-radius: 50%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0.8;
+                filter: blur(5px); /* Subtle blur effect */
+            }
+    
+            .social-links a:hover::before {
+                opacity: 1;
+                filter: blur(8px); /* Increased blur effect on hover */
+            }
+    
+            .social-links a:hover {
+                color: #3498db;
+            }
+    
+            .nav-menu ul {
+                list-style: none;
+                padding: 0;
+                margin-top: 20px; /* Increased margin */
+            }
+    
+            .nav-menu ul li {
+                margin-bottom: 40px; /* Increased margin */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+    
+            .nav-menu ul li a {
+                color: #6c757d; /* Greyish fancy color for the links */
+                text-decoration: none;
+                font-size: 20px;
+                transition: 0.3s;
+                margin-bottom: 20px; /* Increased margin */
+                display: flex;
+                align-items: center;
+            }
+    
+            .nav-menu ul li a i {
+                margin-left: 10px; /* Add space between menu item text and icon */
+            }
+    
+            .nav-menu ul li a:hover {
+                color: #adb5bd; /* Change color on hover */
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div id="header">
+            <div class="profile">
+                <img src="https://i.pinimg.com/564x/df/9f/9e/df9f9ec2130c7ec3115a367c8fceb64c.jpg"
+                    alt="Profile Image" class="img-fluid rounded-circle profile-image">
+                <h1><a href="./" style="text-decoration: none; color: #6c757d;">Ex</a></h1>
+                <div class="social-links mt-3 text-center">
+                    <a href="https://github.com/ExGoKrazy" class="github"><i class="fab fa-github"></i></a>
+                    <a href="https://twitter.com/qxz0zx" class="twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="./" class="nav-link scrollto"><i class="bx bx-home"></i> <span>home</span></a></li>
+                    <li><a href="projects.html" class="nav-link scrollto"><i class="bx bx-book-content"></i><span>projects</span></a></li>
+                            <li><a href="contact.html" class="nav-link scrollto"><i class="bx bx-user"></i> <span>contact</span></a></li>
+                </ul>
+            </nav><!-- .nav-menu -->
+        </div>
+        <!-- Your HTML content goes here -->
+    </body>
+    
+    </html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morphing Text Effect</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            position: absolute;
+            margin: auto;
+            width: 100vw;
+            height: 80pt;
+            top: 0;
+            bottom: 0;
+            filter: url(#threshold) blur(0.6px);
+        }
+
+        #text1,
+        #text2 {
+            position: absolute;
+            width: 100%;
+            display: inline-block;
+            font-family: 'Raleway', sans-serif;
+            font-size: 80pt;
+            text-align: center;
+            user-select: none;
+        }
+
+        #image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 500px;
+            display: none; /* Initially hide the image */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- The two texts -->
+    <div id="container">
+        <span id="text1"></span>
+        <span id="text2"></span>
+    </div>
+
+    <!-- The SVG filter used to create the merging effect -->
+    <svg id="filters">
+        <defs>
+            <filter id="threshold">
+                <feColorMatrix in="SourceGraphic" type="matrix"
+                    values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 255 -140" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Cool font from Google Fonts! -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:900&display=swap">
+
+    <script>
+        const elts = {
+            text1: document.getElementById("text1"),
+            text2: document.getElementById("text2")
+        };
+
+        const texts = [
+            "My",
+            "Projects",
+            "2023",
+            "- Ex",
+            "- ( SOON ! )",
+        ];
+
+        const morphTime = 1;
+        const cooldownTime = 0.25;
+
+        let textIndex = texts.length - 1;
+        let time = new Date();
+        let morph = 0;
+        let cooldown = cooldownTime;
+
+        elts.text1.textContent = texts[textIndex % texts.length];
+        elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+
+        function doMorph() {
+            morph -= cooldown;
+            cooldown = 0;
+
+            let fraction = morph / morphTime;
+
+            if (fraction > 1) {
+                cooldown = cooldownTime;
+                fraction = 1;
+            }
+
+            setMorph(fraction);
+        }
+
+        function setMorph(fraction) {
+            elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+            elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+            fraction = 1 - fraction;
+            elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+            elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+            elts.text1.textContent = texts[textIndex % texts.length];
+            elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+
+            // Check if "- Ex" has faded away completely
+            if (fraction === 1 && texts[textIndex % texts.length] === "- Ex") {
+                // Show the image after fading out "- Ex"
+                document.getElementById("image").style.display = "block";
+            } else {
+                // Hide the image if not
+                document.getElementById("image").style.display = "none";
+            }
+        }
+
+        function doCooldown() {
+            morph = 0;
+
+            elts.text2.style.filter = "";
+            elts.text2.style.opacity = "100%";
+
+            elts.text1.style.filter = "";
+            elts.text1.style.opacity = "0%";
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            let newTime = new Date();
+            let shouldIncrementIndex = cooldown > 0;
+            let dt = (newTime - time) / 1000;
+            time = newTime;
+
+            cooldown -= dt;
+
+            if (cooldown <= 0) {
+                if (shouldIncrementIndex) {
+                    textIndex++;
+                }
+
+                doMorph();
+            } else {
+                doCooldown();
+            }
+        }
+
+        animate();
+    </script>
+</body>
+
+</html>
